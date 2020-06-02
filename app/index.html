@@ -4,10 +4,11 @@
 	<meta charset="UTF-8">
 	<title>TestCats</title>
 	<link rel="stylesheet" href="css/style.css"> 
+	<link rel="stylesheet" href="css/media.css">
 </head>
 <body class="page">
 		<header class="header">
-			<div class="container">
+			<div class="header__container">
 				<img src="img/catLogo.svg" alt="logo" class="logo">
 				<ul class="listMenu">
 					<li class="listMenu__item" ><a href="#">Почему мы?</a></li>
@@ -17,38 +18,47 @@
 				</ul>
 			</div>
 		</header>
+		
 		<div class="wrapper">
+			<h1 class="title">
+				Наши номера
+			</h1>
+			<div class="wrapper__container">
 			<form action="" class="form">
-				<h1 class="form__title">
-					Наши номера
-				</h1>			
-				<div class="form__price_per_day">
-					<h4 class="form__price_per_day__title">
+				
+				<h4 class="form__price_per_day__title">
 						Цена за сутки, ₽
-					</h4>
-						<input type="text" value="100"  class="form__price_per_day__input">
-						<input type="text" value="600" class="form__price_per_day__input">
+				</h4>		
+				<div class="form__price_per_day">	
+						<div class="inputBox" tabindex="0">
+							<span>от</span>
+							<input type="text" value="100"  class="form__price_per_day__input">
+						</div>
+						<div class="inputBox" tabindex="0">
+							<span>до</span>
+							<input type="text" value="100"  class="form__price_per_day__input">
+						</div>
 				</div>
 				<div class="form__area">
 					<h4 class="form__price_per_day__title">
 						Площадь
 					</h4>
-					<span><input type="checkbox" class="form__area__checkbox checkbox">0,63 м2</span>
-					<span><input type="checkbox" class="form__area__checkbox checkbox">0,90 м2</span>
-					<span><input type="checkbox" class="form__area__checkbox checkbox ">1,13 м2</span>
-					<span><input type="checkbox" class="form__area__checkbox checkbox">1,56 м2</span>
-					<span><input type="checkbox" class="form__area__checkbox checkbox">2,56 м2</span>
-					<span><input type="checkbox" class="form__area__checkbox checkbox">2,56 м2</span>
+					<div><input type="checkbox" class="form__area__checkbox checkbox"/> <span onClick="CheckClick(this)" class="hand">0,63 м2</span></div>
+					<div><input type="checkbox" class="form__area__checkbox checkbox"/> <span onClick="CheckClick(this)" class="hand">0,90 м2</span></div>
+					<div><input type="checkbox" class="form__area__checkbox checkbox"/> <span onClick="CheckClick(this)" class="hand">1,13 м2</span></div>
+					<div><input type="checkbox" class="form__area__checkbox checkbox"/> <span onClick="CheckClick(this)" class="hand">1,56 м2</span></div>
+					<div><input type="checkbox" class="form__area__checkbox checkbox"/> <span onClick="CheckClick(this)" class="hand">2,56 м2</span></div>
+					<div><input type="checkbox" class="form__area__checkbox checkbox"/> <span onClick="CheckClick(this)" class="hand">2,56 м2</span></div>
 				</div>
 				<div class="form__room_facilities">
 					<h4 class="form__room_facilities__title">
 						Оснащение номера
 					</h4>
-					<span><input type="checkbox" class="form__room_facilities__checkbox checkbox">Пустой номер</span>
-					<span><input type="checkbox" class="form__room_facilities__checkbox checkbox">Лежак</span>
-					<span><input type="checkbox" class="form__room_facilities__checkbox checkbox">Когтеточка</span>
-					<span><input type="checkbox" class="form__room_facilities__checkbox checkbox">Игровой-комплекс</span>
-					<span><input type="checkbox" class="form__room_facilities__checkbox checkbox">Домик</span>
+					<div><input type="checkbox" class="form__area__checkbox checkbox"/> <span onClick="CheckClick(this)" class="hand">Пустой номер</span></div>
+					<div><input type="checkbox" class="form__area__checkbox checkbox"/> <span onClick="CheckClick(this)" class="hand">Лежак</span></div>
+					<div><input type="checkbox" class="form__area__checkbox checkbox"/> <span onClick="CheckClick(this)" class="hand">Когтеточка</span></div>
+					<div><input type="checkbox" class="form__area__checkbox checkbox"/> <span onClick="CheckClick(this)" class="hand">Игровой-комплекс</span></div>
+					<div><input type="checkbox" class="form__area__checkbox checkbox"/> <span onClick="CheckClick(this)" class="hand">Домик</span></div>
 				</div>
 				<button class="form__button buttom_apply">
 					Применить
@@ -57,130 +67,149 @@
 					Сбросить фильтр
 				</button>
 			</form>
-			<div class="cards">
-					<div class="cards__card">
-						<img src="img/catOne.jpg" alt="" class="cards__card__image">		
-						<div class="card_text">
-							<h2 class = "card__title">
-							Эконом
-							</h2>
-							<span>Размеры (ШхГхВ) - 90х70х180 см</span>
-							<span>Площадь - 0,63 м2</span>
-							<span>Оснащение номера</span>
-							<span>Цена за сутки:</span>
-							<button class="card__button">
-								<span class="card__button__text">
-									Забронировать
+			<div class="filters">
+				<form action="#" class="form_select-box">
+ 
+					<div class="select-box">
+				    
+				    <label for="select-box1" class="label select-box1"><span class="label-desc">Сортировать</span> </label>
+				    <select id="select-box1" class="select">
+				      <option value="Choice 1">↑ По площади</option>
+				      <option value="Choice 2">↓ По площади</option>
+				      <option value="Choice 3">↑ По цене</option>
+				      <option value="Choice 3">↓ По цене</option>
+				    </select>
+				    
+				  	</div>
+				   
+				</form>  
+				<div class="cards">
+						<div class="cards__card">
+							<img src="img/catOne.jpg" alt="" class="cards__card__image">		
+							<div class="card_text">
+								<h2 class = "card__title">
+								Эконом
+								</h2>
+								<span>Размеры (ШхГхВ) - 90х70х180 см</span>
+								<span>Площадь - 0,63 м2</span>
+								<span>Оснащение номера</span>
+								<span>Цена за сутки:</span>
+								<button class="card__button">
+									<span class="card__button__text">
+										Забронировать
 
-								</span>
-							<img src="img/paw.svg" class="cards__card__paw"></img>
-							</button>
+									</span>
+								<img src="img/paw.svg" class="cards__card__paw"></img>
+								</button>
 
-						</div>
-						
-					</div>	
-					<div class="cards__card">
-						<img src="img/catOne.jpg" alt="" class="cards__card__image">
-						<div class="card_text">
-							<h2 class = "card__title">
-							Эконом
-							</h2>
-							<span>Размеры (ШхГхВ) - 90х70х180 см</span>
-							<span>Площадь - 0,63 м2</span>
-							<span>Оснащение номера</span>
-							<span>Цена за сутки:</span>
-							<button class="card__button">
-								<span class="card__button__text">
-									Забронировать
-									
-								</span>
-							<img src="img/paw.svg" class="cards__card__paw"></img>
-							</button>
+							</div>
+							
+						</div>	
+						<div class="cards__card">
+							<img src="img/catOne.jpg" alt="" class="cards__card__image">
+							<div class="card_text">
+								<h2 class = "card__title">
+								Эконом
+								</h2>
+								<span>Размеры (ШхГхВ) - 90х70х180 см</span>
+								<span>Площадь - 0,63 м2</span>
+								<span>Оснащение номера</span>
+								<span>Цена за сутки:</span>
+								<button class="card__button">
+									<span class="card__button__text">
+										Забронировать
+										
+									</span>
+								<img src="img/paw.svg" class="cards__card__paw"></img>
+								</button>
 
-						</div>
-					</div>	
-					<div class="cards__card">
-						<img src="img/catOne.jpg" alt="" class="cards__card__image">
-						<div class="card_text">
-							<h2 class = "card__title">
-							Эконом
-							</h2>
-							<span>Размеры (ШхГхВ) - 90х70х180 см</span>
-							<span>Площадь - 0,63 м2</span>
-							<span>Оснащение номера</span>
-							<span>Цена за сутки:</span>
-							<button class="card__button">
-								<span class="card__button__text">
-									Забронировать
-									
-								</span>
-							<img src="img/paw.svg" class="cards__card__paw"></img>
-							</button>
+							</div>
+						</div>	
+						<div class="cards__card">
+							<img src="img/catOne.jpg" alt="" class="cards__card__image">
+							<div class="card_text">
+								<h2 class = "card__title">
+								Эконом
+								</h2>
+								<span>Размеры (ШхГхВ) - 90х70х180 см</span>
+								<span>Площадь - 0,63 м2</span>
+								<span>Оснащение номера</span>
+								<span>Цена за сутки:</span>
+								<button class="card__button">
+									<span class="card__button__text">
+										Забронировать
+										
+									</span>
+								<img src="img/paw.svg" class="cards__card__paw"></img>
+								</button>
 
-						</div>
-					</div>	
-					<div class="cards__card">
-						<img src="img/catOne.jpg" alt="" class="cards__card__image">
-						<div class="card_text">
-							<h2 class = "card__title">
-							Эконом
-							</h2>
-							<span>Размеры (ШхГхВ) - 90х70х180 см</span>
-							<span>Площадь - 0,63 м2</span>
-							<span>Оснащение номера</span>
-							<span>Цена за сутки:</span>
-							<button class="card__button">
-								<span class="card__button__text">
-									Забронировать
-									
-								</span>
-							<img src="img/paw.svg" class="cards__card__paw"></img>
-							</button>
+							</div>
+						</div>	
+						<div class="cards__card">
+							<img src="img/catOne.jpg" alt="" class="cards__card__image">
+							<div class="card_text">
+								<h2 class = "card__title">
+								Эконом
+								</h2>
+								<span>Размеры (ШхГхВ) - 90х70х180 см</span>
+								<span>Площадь - 0,63 м2</span>
+								<span>Оснащение номера</span>
+								<span>Цена за сутки:</span>
+								<button class="card__button">
+									<span class="card__button__text">
+										Забронировать
+										
+									</span>
+								<img src="img/paw.svg" class="cards__card__paw"></img>
+								</button>
 
-						</div>
-					</div>	
-					<div class="cards__card">
-						<img src="img/catOne.jpg" alt="" class="cards__card__image">
-						<div class="card_text">
-							<h2 class = "card__title">
-							Эконом
-							</h2>
-							<span>Размеры (ШхГхВ) - 90х70х180 см</span>
-							<span>Площадь - 0,63 м2</span>
-							<span>Оснащение номера</span>
-							<span>Цена за сутки:</span>
-							<button class="card__button">
-								<span class="card__button__text">
-									Забронировать
-									
-								</span>
-							<img src="img/paw.svg" class="cards__card__paw"></img>
-							</button>
+							</div>
+						</div>	
+						<div class="cards__card">
+							<img src="img/catOne.jpg" alt="" class="cards__card__image">
+							<div class="card_text">
+								<h2 class = "card__title">
+								Эконом
+								</h2>
+								<span>Размеры (ШхГхВ) - 90х70х180 см</span>
+								<span>Площадь - 0,63 м2</span>
+								<span>Оснащение номера</span>
+								<span>Цена за сутки:</span>
+								<button class="card__button">
+									<span class="card__button__text">
+										Забронировать
+										
+									</span>
+								<img src="img/paw.svg" class="cards__card__paw"></img>
+								</button>
 
-						</div>
-					</div>	
-					<div class="cards__card">
-						<img src="img/catOne.jpg" alt="" class="cards__card__image">
-						<div class="card_text">
-							<h2 class = "card__title">
-							Эконом
-							</h2>
-							<span>Размеры (ШхГхВ) - 90х70х180 см</span>
-							<span>Площадь - 0,63 м2</span>
-							<span>Оснащение номера</span>
-							<span>Цена за сутки:</span>
-							<button class="card__button">
-								<span class="card__button__text">
-									Забронировать
-									
-								</span>
-							<img src="img/paw.svg" class="cards__card__paw"></img>
-							</button>
+							</div>
+						</div>	
+						<div class="cards__card">
+							<img src="img/catOne.jpg" alt="" class="cards__card__image">
+							<div class="card_text">
+								<h2 class = "card__title">
+								Эконом
+								</h2>
+								<span>Размеры (ШхГхВ) - 90х70х180 см</span>
+								<span>Площадь - 0,63 м2</span>
+								<span>Оснащение номера</span>
+								<span>Цена за сутки:</span>
+								<button class="card__button">
+									<span class="card__button__text">
+										Забронировать
+										
+									</span>
+								<img src="img/paw.svg" class="cards__card__paw"></img>
+								</button>
 
-						</div>
-					</div>	
+							</div>
+						</div>	
+				</div>
 			</div>
 		</div>
+		</div>
+		
 	<script src="js/libs.min.js"></script>
 	<script src="js/common.js"></script>
 </body>

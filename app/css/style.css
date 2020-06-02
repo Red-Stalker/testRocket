@@ -1,10 +1,23 @@
+@charset "UTF-8";
 @font-face {
   font-family: 'Lato-Regular';
-  src: url("../fonts/Lato-Regular.ttf"); }
+  src: url("../fonts/Lato/Lato-Regular.ttf"); }
 
 @font-face {
-  font-family: 'Lato-Bold';
-  src: url("../fonts/Lato-Bold.ttf"); }
+  font-family: 'Lato-Medium';
+  src: url("../fonts/Lato/Lato-Medium.ttf"); }
+
+@font-face {
+  font-family: 'Lato-Semibold';
+  src: url("../fonts/Lato/Lato-Semibold.ttf"); }
+
+@font-face {
+  font-family: 'Rubik-Bold';
+  src: url("../fonts/Rubik/Rubik-Bold.ttf"); }
+
+@font-face {
+  font-family: 'Rubik-Medium';
+  src: url("../fonts/Rubik/Rubik-Medium.ttf"); }
 
 @keyframes showElement {
   0% {
@@ -23,6 +36,9 @@ li {
 a {
   text-decoration: none; }
 
+button {
+  cursor: pointer; }
+
 .page {
   height: 2000px; }
 
@@ -40,26 +56,41 @@ a {
   width: 100%;
   background-color: #fff; }
 
-.container {
+.header__container {
   max-width: 1170px;
   margin: 0 auto; }
 
+.wrapper {
+  max-width: 1170px;
+  margin: 0 auto; }
+
+.wrapper__container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row; }
+
 .listMenu {
-  width: 30%;
   display: flex;
   float: right;
-  justify-content: space-between; }
+  margin-right: 20px; }
+
+.listMenu__item {
+  margin-right: 20px; }
 
 .listMenu__item a {
   color: #1A212F;
-  font-family: 'Lato-Bold'; }
+  font-family: 'Lato-Semibold'; }
 
-.wrapper {
-  max-width: 1170px;
-  margin: 0 auto;
-  margin-top: 60px;
-  display: flex;
-  flex-direction: row; }
+.listMenu__item a:hover {
+  color: #F05B1B;
+  transition: 0.3s; }
+
+.form__title {
+  font-family: Rubik-Bold;
+  font-size: 36px; }
+
+.form h4 {
+  font-family: 'Lato-Medium'; }
 
 .form {
   display: flex;
@@ -68,11 +99,33 @@ a {
   font-family: Lato-Regular;
   width: 30%; }
 
+.form__price_per_day {
+  display: flex;
+  flex-direction: row; }
+
+.inputBox {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #E1E1E1;
+  width: 70px;
+  margin-right: 10px;
+  font-size: 12px;
+  padding-left: 5px; }
+
+.inputBox:focus {
+  outline: 1px solid #F05B1B; }
+
+.inputBox span {
+  margin-top: 3px; }
+
+.hand {
+  cursor: pointer; }
+
 .form__price_per_day__input {
-  width: 90px;
+  width: 50px;
   height: 20px;
-  margin-right: 20px;
-  border: 1px solid #E1E1E1; }
+  outline: none;
+  border: 0px; }
 
 .form__room_facilities {
   display: flex;
@@ -87,20 +140,35 @@ a {
   height: 42px;
   border-radius: 25px;
   border: none;
-  background-color: #FAC663;
-  margin-top: 20px; }
+  margin-top: 20px;
+  outline: none; }
 
-.buttom_reset {
+.buttom_apply {
+  background-color: #FAC663; }
+
+.buttom_apply:hover {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   background-color: #fff;
   border: 2px solid #FAC663;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); }
+  transition: 0.3s; }
+
+.buttom_reset {
+  border: 2px solid #FAC663;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  background-color: #fff; }
+
+.buttom_reset:hover {
+  background-color: #FAC663;
+  transition: 0.3s;
+  box-shadow: 0 0 0px rgba(0, 0, 0, 0.5); }
 
 .checkbox {
   margin-bottom: 10px; }
 
 .cards {
   display: flex;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  margin-top: 30px; }
 
 .cards__card {
   width: 270px;
@@ -116,10 +184,14 @@ a {
 .card_text {
   padding: 10px;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  font-family: Lato-Regular; }
 
 .card_text span {
   margin-top: 13px; }
+
+.card_text h2 {
+  font-family: 'Rubik-Medium'; }
 
 .card__title {
   margin: 0px; }
@@ -133,7 +205,13 @@ a {
   margin-top: 13px;
   box-shadow: 0 5px 5px -5px #000;
   color: #FFFEFD;
-  font-size: 14px; }
+  font-size: 14px;
+  margin-left: 10px; }
+
+.card__button:hover {
+  transition: 0.3s;
+  background-color: #F05B1B;
+  box-shadow: 0 0px 0px 0px #000; }
 
 .cards__card__paw {
   float: right;
@@ -144,3 +222,48 @@ a {
   margin-left: 50px;
   display: block;
   margin-top: 10px; }
+
+.form_select-box {
+  width: 200px;
+  float: right;
+  height: 30px;
+  font-family: Lato-Regular;
+  font-size: 15px; }
+
+.select-box {
+  cursor: pointer;
+  position: relative;
+  width: 100%; }
+
+.select,
+.label {
+  display: block; }
+
+.select {
+  width: 100%;
+  position: absolute;
+  top: -15px;
+  padding: 5px 0;
+  height: 40px;
+  opacity: 0;
+  border-radius: 10px; }
+
+.select-box1 {
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+  border-radius: 10px; }
+
+.label {
+  position: relative;
+  padding: 5px 10px; }
+
+.open .label::after {
+  content: "▲"; }
+
+.label::after {
+  content: "▼";
+  font-size: 12px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 5px 15px;
+  border-left: 5px solid #fff; }
