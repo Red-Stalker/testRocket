@@ -1,21 +1,20 @@
 window.onscroll = function showHeader() {
     var header = document.querySelector('.header');
+    var menu = document.querySelector('.menu');
     if(window.pageYOffset > 50){
         header.classList.add('header_fixed');
+        menu.classList.add('menu-popup');       
     } else{
         header.classList.remove('header_fixed');
+        menu.classList.remove('menu-popup');
     }
 }
 
-function CheckClick(e){
-   t=e.previousSibling.previousSibling;
-   //alert(t.tagName+' '+t.type);
-   if( (t.tagName=='INPUT')&&(t.type=='checkbox')) t.click();
-}
-
 $('.buttom_reset').click(function() {
-  $('input:checked').prop('checked', false);
-  $('form :input').val('');
+    $('.form__room_facilities input').prop('checked', false);
+    $('.form__area input').prop('checked', true);
+    $('#from').val('100');
+    $('#to').val('600'); 
 });
 
 
@@ -47,3 +46,24 @@ $("select").on("change" , function() {
 });
 
 
+$(function() {
+  var $menu_popup = $('.menu-popup');
+  
+  $(".menu-triger, .menu-close").click(function(){
+    $menu_popup.slideToggle(300, function(){
+      if ($menu_popup.is(':hidden')) {
+        $('body').removeClass('body_pointer');
+      } else {
+        $('body').addClass('body_pointer');
+      }         
+    });  
+    return false;
+  });     
+  
+  $(document).on('click', function(e){
+    if (!$(e.target).closest('.menu').length){
+      $('body').removeClass('body_pointer');
+      $menu_popup.slideUp(300);
+    }
+  });
+});

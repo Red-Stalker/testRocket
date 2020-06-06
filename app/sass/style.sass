@@ -37,8 +37,7 @@ a
 button
 	cursor: pointer
 
-.page
-	height: 2000px
+
 
 .header
 	box-shadow: 0 5px 5px -5px #000 
@@ -83,7 +82,10 @@ button
 	color: #F05B1B
 	transition: 0.3s
 
-.form__title
+.menu
+	display: none
+
+.title
 	font-family: Rubik-Bold
 	font-size: 36px
 
@@ -96,6 +98,7 @@ button
 	font-size: 14px
 	font-family: Lato-Regular
 	width: 30%
+	margin-top: 40px
 
 .form__price_per_day
 	display: flex
@@ -109,6 +112,7 @@ button
 	margin-right: 10px
 	font-size: 12px
 	padding-left: 5px
+	font-family: Lato-Regular
 
 .inputBox:focus
 	outline: 1px solid #F05B1B
@@ -119,7 +123,10 @@ button
 input[type="checkbox"]
 	vertical-align:baseline
 
-.hand
+.checkbox
+	cursor: pointer
+
+.checkbox label
 	cursor: pointer
 
 .form__price_per_day__input
@@ -127,6 +134,7 @@ input[type="checkbox"]
 	height: 20px
 	outline: none
 	border: 0px
+	font-family: Lato-Regular
 
 .form__room_facilities
 	display: flex
@@ -170,6 +178,7 @@ input[type="checkbox"]
 	display: flex
 	flex-wrap: wrap
 	margin-top: 30px
+	width: 1000px
 
 .cards__card
 	width: 270px
@@ -186,11 +195,16 @@ input[type="checkbox"]
 .card_text
 	padding: 10px
 	display: flex
+	font-size: 14px
 	flex-direction: column 
 	font-family: Lato-Regular
 
 .card_text span
 	margin-top: 13px
+
+.card_cost
+	font-family: 'Lato-Medium'
+	font-size: 18px
 
 .card_text h2
 	font-family: 'Rubik-Medium'
@@ -237,7 +251,6 @@ input[type="checkbox"]
   	position : relative
   	width: 100%
 
-
 .select,
 .label 
   	display: block
@@ -250,7 +263,6 @@ input[type="checkbox"]
 	height: 40px
 	opacity: 0
 	border-radius: 10px
-
   
 .select-box1 
 	box-shadow: 0 0 3px rgba(0,0,0,0.5)
